@@ -11,7 +11,7 @@ export async function getStaticPaths() {
 
     return articles.map((article) => ({
         params: {
-            slug: article.data.slug
+            slug: article.data.slug,
         },
         props: { article },
     }));
@@ -35,14 +35,18 @@ const relatedArticles = allArticles.filter(
 ---
 
 <InfoLayout title={article.data.title} frontmatter={article.data}>
-    <section class="p-4 sm:pt-8 sm:px-12 pb-20 min-h-dvh">
+    <section class="p-4 sm:pt-8 sm:px-12 pb-20 min-h-dvh justify-center">
         <Prose>
             <Content />
         </Prose>
 
         <p class="my-4 text-sm italic text-zinc-300">
             This is an excerpt from {`${article.data.author}'s`}
-            <a href={article.data.originalLink} target="_blank" class="underline underline-offset-4 decoration-zinc-100 hover:decoration-white hover:text-white">
+            <a
+                href={article.data.originalLink}
+                target="_blank"
+                class="underline underline-offset-4 decoration-zinc-100 hover:decoration-white hover:text-white"
+            >
                 {article.data.title}
             </a>
             article. I highly recommend you give it a read!
@@ -63,7 +67,7 @@ const relatedArticles = allArticles.filter(
                                         {article.data.title}
                                     </h3>
                                     <p class="mt-0.5 text-sm text-zinc-400">
-                                        {formatDate((article.data.pubDate))} 
+                                        {formatDate(article.data.pubDate)}
                                         &middot; {article.data.author}
                                     </p>
                                 </a>

@@ -1,17 +1,18 @@
 ---
 import "../styles/global.css";
 import { Font } from "astro:assets";
-import { ClientRouter } from 'astro:transitions';
-import LoadingIndicator from "astro-loading-indicator/component"
+import { ClientRouter } from "astro:transitions";
+import LoadingIndicator from "astro-loading-indicator/component";
 
 const { title, description } = Astro.props;
 
-const defaultTitle = "Nikola Tesla";
-const defaultDescription = "Nikola Tesla was a Serbian-American inventor, electrical engineer, mechanical engineer, and futurist who is best known for his contributions to the design of the modern alternating current (AC) electricity supply system.";
+const defaultTitle = "Riccardo Gualtieri";
+const defaultDescription =
+	"Nikola Tesla was a Serbian-American inventor, electrical engineer, mechanical engineer, and futurist who is best known for his contributions to the design of the modern alternating current (AC) electricity supply system.";
 ---
 
 <!doctype html>
-<html lang="en">
+<html lang="it">
 	<head>
 		<meta charset="UTF-8" />
 		<meta name="viewport" content="width=device-width" />
@@ -29,7 +30,10 @@ const defaultDescription = "Nikola Tesla was a Serbian-American inventor, electr
 		<!-- Twitter Meta Tags -->
 		<meta name="twitter:card" content="summary_large_image" />
 		<meta property="twitter:domain" content="nikola.fluidinterfaces.com" />
-		<meta property="twitter:url" content="https://nikola.fluidinterfaces.com/" />
+		<meta
+			property="twitter:url"
+			content="https://nikola.fluidinterfaces.com/"
+		/>
 		<meta name="twitter:title" content={defaultTitle} />
 		<meta name="twitter:description" content={defaultDescription} />
 		<meta name="twitter:image" content="/social-image.jpg" />
@@ -37,7 +41,6 @@ const defaultDescription = "Nikola Tesla was a Serbian-American inventor, electr
 		<Font cssVariable="--font-geist" preload />
 		<ClientRouter />
 		<LoadingIndicator color="#f4f4f5" height="2px" />
-
 	</head>
 	<body class="font-sans min-h-screen bg-zinc-900">
 		<slot />
