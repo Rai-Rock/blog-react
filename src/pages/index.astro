@@ -1,10 +1,10 @@
 ---
 import H1 from "../components/h1.astro";
+import H3 from "../components/h3.astro";
 import Link from "../components/link.astro";
 import Navigation from "../components/navigation";
 import RootLayout from "../layouts/RootLayout.astro";
 import WarpBackground from "../components/warp-background";
-import AvailableForWork from "../components/available.astro";
 ---
 
 <RootLayout>
@@ -31,12 +31,14 @@ import AvailableForWork from "../components/available.astro";
 				<div>
 					<H1 size="large"> Riccardo <br /> Gualtieri</H1>
 				</div>
-
 				<div>
-					<AvailableForWork className="py-4" />
+					<H3 size="medium">Consulente del credito</H3>
+				</div>
+                
+				<div>
 					<div class="mb-2 sm:mb-4 flex items-center justify-between">
 						<div class="flex items-center gap-4">
-							<Link href="#">Scrivimi</Link>
+							<Link href="/contact">Scrivimi</Link>
 							<Link href="/projects" variant="secondary"
 								>Contenuti consigliati</Link
 							>
